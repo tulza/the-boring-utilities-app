@@ -1,3 +1,3 @@
 export const SLUG = {
-    BLOGS: "Blogs" as string,
+    CATALOGUE: "catalogue" as string,
 };
