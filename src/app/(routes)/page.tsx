@@ -1,5 +1,5 @@
 import Block from "@components/Block";
-import Card from "@components/home/Card";
+import GenerateCard from "@components/home/GenerateCard";
 
 export default function Home() {
     return (
@@ -17,7 +17,7 @@ export default function Home() {
             <div className="mt-16 flex w-full justify-center">
                 <Block>
                     <div className="w-full">
-                        <Card />
+                        <GenerateCard />
                     </div>
                 </Block>
             </div>
