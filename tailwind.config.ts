@@ -13,6 +13,16 @@ export default {
                 secondary: "hsl(var(--secondary))",
                 tertiary: "hsl(var(--tertiary))",
             },
+            fontFamily: {
+                geistSans: ["var(--font-geist-sans)"],
+                kollektif: ["var(--font-kollektif)"],
+                geistMono: ["var(--font-geist-mono)"],
+                generalSans: ["var(--font-generalSans)"],
+                clashDisplay: ["var(--font-clash-display)"],
+            },
+            boxShadow: {
+                card: "16px 16px 40px 0px rgba(0, 0, 0, 0.15)",
+            },
         },
     },
     plugins: [],

@@ -1,10 +1,10 @@
 "use client";
 
 import React, { useEffect } from "react";
-import { default as NextImage, StaticImageData } from "next/image";
+import { default as NextImage, type ImageProps } from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
 
-interface SuspenseImageProps extends StaticImageData {
+interface SuspenseImageProps extends ImageProps {
     src: string;
     alt: string;
     fallback: React.ReactNode;

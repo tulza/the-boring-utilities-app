@@ -4,9 +4,13 @@
 
 @layer base {
     html {
-        @apply bg-background;
+        /* @apply bg-background; */
         --background: 45 26% 91%;
         --secondary: 163 70% 25%;
         --tertiary: 187 59% 16%;
     }
+}
+
+.noise-10 {
+    background-image: url("./assets/noise-10.png");
 }

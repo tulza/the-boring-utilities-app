@@ -1,8 +1,9 @@
 import { Metadata } from "next";
 
-import "./globals.css";
+import "../../styles/globals.css";
 
-import { geistMono, geistSans } from "@fonts/GeistFont";
+import { clashDisplay } from "src/fonts/ClashDisplay";
+import { geistMono, geistSans, generalSans } from "src/fonts/typography";
 
 export const metadata: Metadata = {
     title: "The boring utilities app",
@@ -17,7 +18,11 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en">
-            <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>{children}</body>
+            <body
+                className={`${geistSans.variable} ${clashDisplay.variable} ${generalSans.variable} ${geistMono.variable} antialiased`}
+            >
+                {children}
+            </body>
         </html>
     );
 }
