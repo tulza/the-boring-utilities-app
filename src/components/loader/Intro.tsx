@@ -1,9 +1,8 @@
 "use client";
 
 import React from "react";
+import { easeOutQuad } from "@libs/ease";
 import { motion, Variants } from "framer-motion";
-
-import { easeOutQuad } from "@/libs/ease";
 
 const Intro = ({ children }: { children: React.ReactNode }) => {
     return (

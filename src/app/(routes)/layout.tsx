@@ -2,6 +2,8 @@ import { Metadata } from "next";
 
 import "./globals.css";
 
+import { geistMono, geistSans } from "@fonts/GeistFont";
+
 export const metadata: Metadata = {
     title: "The boring utilities app",
     description:
