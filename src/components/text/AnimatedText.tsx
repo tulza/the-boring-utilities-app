@@ -1,13 +1,12 @@
 "use client";
 
 import React from "react";
+import { textVariantDefault } from "@data/variants/text";
+import { cn } from "@libs/utils";
+import { type HTMLAttributeNoMotion } from "@typings/motion";
 import { motion, Variants } from "motion/react";
 
-import { textVariantDefault } from "@/data/variants/text";
-import { cn } from "@/libs/utils";
-import { HTMLAtrributeNoMotion } from "@/types/motion";
-
-interface TextProps extends HTMLAtrributeNoMotion<"p"> {
+interface TextProps extends HTMLAttributeNoMotion<"p"> {
     text: string;
     type?: "char" | "word";
     variants?: Variants;
