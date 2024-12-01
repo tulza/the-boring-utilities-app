@@ -6,7 +6,7 @@ import { CardSchema, type Card } from "@typings/card";
 const { default: cardData } = await import("@data/cards/CardData.json");
 
 const GenerateCard = async () => {
-    if (CardSchema.array().safeParse(cardData).success === false) return <>something went wrong...</>;
+    if (CardSchema.array().safeParse(cardData).success === false) return <ErrorCard />;
 
     return cardData.map((card) => <Card {...card} key={card.title} />);
 };
@@ -25,6 +25,14 @@ const Card = ({ title, description, image, path }: Card) => {
                 <p className="font-generalSans font-light">{description}</p>
             </div>
         </a>
+    );
+};
+
+const ErrorCard = () => {
+    return (
+        <div className="shadow-card font-generalSans grid w-full place-items-center rounded-md border bg-slate-100 py-4">
+            <p>could not generate this card...</p>
+        </div>
     );
 };
 
