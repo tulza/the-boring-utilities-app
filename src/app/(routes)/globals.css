@@ -1,3 +1,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+    html {
+        @apply bg-background;
+        --background: 45 26% 91%;
+        --secondary: 163 70% 25%;
+        --tertiary: 187 59% 16%;
+    }
+}
