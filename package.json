@@ -21,7 +21,10 @@
         "nuke": "pnpm dlx rimraf .next && pnpm dlx rimraf node_modules",
         "nuke:i": "pnpm dlx rimraf .next && pnpm dlx rimraf node_modules",
         "payload": "cross-env PAYLOAD_CONFIG_PATH=src/payload.config.ts payload",
-        "generate:type": "pnpm run payload generate:types"
+        "generate:type": "pnpm run payload generate:types",
+        "test": "jest",
+        "test:watch": "jest --watchAll",
+        "test:c": "jest --coverage"
     },
     "dependencies": {
         "@payloadcms/db-postgres": "^3.1.1",
@@ -45,6 +48,10 @@
     "devDependencies": {
         "@flydotio/dockerfile": "^0.5.9",
         "@ianvs/prettier-plugin-sort-imports": "^4.4.0",
+        "@jest/globals": "^29.7.0",
+        "@testing-library/dom": "^10.4.0",
+        "@testing-library/jest-dom": "^6.6.3",
+        "@testing-library/react": "^16.0.1",
         "@types/node": "^22.9.0",
         "@types/react": "18.3.12",
         "@types/react-dom": "18.3.1",
@@ -53,10 +60,14 @@
         "eslint-config-prettier": "^9.1.0",
         "eslint-plugin-prettier": "^5.2.1",
         "eslint-plugin-tailwindcss": "^3.17.5",
+        "jest": "^29.7.0",
+        "jest-environment-jsdom": "^29.7.0",
         "postcss": "^8",
         "prettier": "^3.3.3",
         "prettier-plugin-tailwindcss": "^0.6.8",
         "tailwindcss": "^3.4.1",
+        "ts-jest": "^29.2.5",
+        "ts-node": "^10.9.2",
         "tsconfig-paths": "^4.2.0",
         "typescript": "^5",
         "typescript-eslint": "^8.13.0"
