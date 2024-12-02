@@ -6,7 +6,7 @@ export default function Home() {
     return (
         <main className="flex flex-col pt-12">
             <header className="flex w-full justify-center">
-                <NavigationBar title="The boring utilities" root />
+                <NavigationBar title="Image Converter" />
             </header>
             <div className="mt-16 flex w-full justify-center">
                 <Block>

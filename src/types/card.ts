@@ -8,6 +8,7 @@ const CardSchema = z.object({
         alt: z.string(),
     }),
     path: z.string(),
+    WIP: z.boolean().optional(),
 });
 
 type Card = z.infer<typeof CardSchema>;

@@ -21,7 +21,8 @@ export default {
                 clashDisplay: ["var(--font-clash-display)"],
             },
             boxShadow: {
-                card: "16px 16px 40px 0px rgba(0, 0, 0, 0.15)",
+                card: "16px 16px 40px 0px rgba(0, 0, 0, 0.10)",
+                "card-soft": "8px 8px 24px 0px rgba(0, 0, 0, 0.10)",
             },
         },
     },
