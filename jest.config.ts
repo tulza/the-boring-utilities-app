@@ -13,14 +13,14 @@ const config: Config = {
     // Add more setup options before each test is run
     // setupFilesAfterEnv: ['<rootDir>/jest.setup.ts'],
     moduleNameMapper: {
-        "^@collections/(.*)$": "<rootDir>/collections/$1",
-        "^@components/(.*)$": "<rootDir>/components/$1",
-        "^@data/(.*)$": "<rootDir>/data/$1",
-        "^@hooks/(.*)$": "<rootDir>/hooks/$1",
-        "^@libs/(.*)$": "<rootDir>/libs/$1",
-        "^@typings/(.*)$": "<rootDir>/types/$1",
-        "^@fonts$": "<rootDir>/fonts",
-        "^@payload-config$": "<rootDir>/payload.config.ts",
+        "^@collections/(.*)$": "<rootDir>/src/collections/$1",
+        "^@components/(.*)$": "<rootDir>/src/components/$1",
+        "^@data/(.*)$": "<rootDir>/src/data/$1",
+        "^@hooks/(.*)$": "<rootDir>/src/hooks/$1",
+        "^@libs/(.*)$": "<rootDir>/src/libs/$1",
+        "^@typings/(.*)$": "<rootDir>/src/types/$1",
+        "^@fonts$": "<rootDir>/src/fonts",
+        "^@payload-config$": "<rootDir>/src/payload.config.ts",
     },
 };
 
