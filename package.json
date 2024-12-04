@@ -6,7 +6,7 @@
     ],
     "license": "GPL-3.0",
     "scripts": {
-        "dev": "next dev --turbo",
+        "dev": "next dev",
         "scan": "next dev & npx react-scan@latest localhost:3000",
         "build": "next build",
         "analyze": "ANALYZE=true next build",
@@ -28,7 +28,7 @@
         "test:c": "jest --coverage"
     },
     "dependencies": {
-        "@ffmpeg/ffmpeg": "0.12.6",
+        "@ffmpeg/ffmpeg": "0.12.7",
         "@ffmpeg/util": "0.12.1",
         "@payloadcms/db-postgres": "^3.1.1",
         "@payloadcms/next": "^3.1.1",
@@ -38,6 +38,7 @@
         "cross-env": "^7.0.3",
         "framer-motion": "^11.12.0",
         "graphql": "^16.9.0",
+        "jszip": "^3.10.1",
         "motion": "^11.12.0",
         "next": "15.0.3",
         "payload": "^3.1.1",
@@ -49,6 +50,7 @@
         "zod": "^3.23.8"
     },
     "devDependencies": {
+        "@ffmpeg/types": "^0.12.2",
         "@flydotio/dockerfile": "^0.5.9",
         "@ianvs/prettier-plugin-sort-imports": "^4.4.0",
         "@jest/globals": "^29.7.0",
