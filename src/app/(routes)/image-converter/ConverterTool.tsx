@@ -1,34 +1,29 @@
 "use client";
 
 import React, { useRef, useState } from "react";
+import { createKey } from "next/dist/shared/lib/router/router";
 import { ImageSkeleton } from "@components/image/ImageSkeleton";
 import { SuspenseImage } from "@components/image/SuspenseImage";
 import extensions from "@data/image-converter/imageExtensions.json";
 import { FFmpeg } from "@ffmpeg/ffmpeg";
-import { fetchFile, toBlobURL } from "@ffmpeg/util";
+import { fetchFile } from "@ffmpeg/util";
+import { loadFFMPEG } from "@libs/ffmpeg";
 import { cn } from "@libs/utils";
 import { motion } from "framer-motion";
+import JSZip from "jszip";
 
 export function ConverterTool() {
     const [fileList, setFileList] = useState<File[]>();
     const [extension, setExtension] = useState(extensions[0].extension);
     const fileLength = fileList ? fileList.length : 0;
-    const messageRef = useRef<HTMLParagraphElement>(null);
+
+    // FFmpeg initialization
     const ffmpegRef = useRef(new FFmpeg());
     const ffmpeg = ffmpegRef.current;
-    const loadFFMPEG = async () => {
-        const baseURL = "https://unpkg.com/@ffmpeg/core@0.12.6/dist/umd";
-        await ffmpeg.load({
-            coreURL: await toBlobURL(`${baseURL}/ffmpeg-core.js`, "text/javascript"),
-            wasmURL: await toBlobURL(`${baseURL}/ffmpeg-core.wasm`, "application/wasm"),
-        });
-    };
 
     const handleConvert = async () => {
         if (!fileList || fileList.length === 0) return;
 
-        const ffmpeg = ffmpegRef.current;
-        messageRef!.current!.innerHTML = "";
         ffmpeg.on("log", ({ message }) => {
             console.log(message);
         });
@@ -37,11 +32,15 @@ export function ConverterTool() {
 
         if (!ffmpeg.loaded) {
             console.log("loading ffmpeg");
-            await loadFFMPEG();
+            await loadFFMPEG(ffmpeg);
             console.log("finished loading ffmpeg");
         }
 
         console.log("fileList length:", fileList.length);
+
+        // initalizing a new zip file
+        const zip = new JSZip();
+
         for (let i = 0; i < fileList.length; i++) {
             try {
                 const file = fileList[i];
@@ -52,26 +51,40 @@ export function ConverterTool() {
                     console.log("matching extension, skipped");
                     continue;
                 }
+
                 // replace extension with new one
                 // and create the new name
+                console.log(nameArray);
                 nameArray[nameArray.length - 1] = extension;
                 const newName = nameArray.join(".");
                 console.log(newName);
 
+                //
+                // FFmpeg command to convert
+                console.log("converting", file.name, "to", newName);
                 ffmpeg.writeFile(file.name, await fetchFile(URL.createObjectURL(file)));
-                await ffmpeg.exec(["-i", file.name, newName]);
+                await ffmpeg.exec(["-i", file.name, "-y", newName]);
                 const data = await ffmpeg.readFile(newName);
-                const download = URL.createObjectURL(new Blob([data], { type: "image" }));
 
-                const link = document.createElement("a");
-                link.href = download;
-                link.download = newName;
-                document.body.appendChild(link);
-                // link.click();
+                zip.file(newName, data);
             } catch (e) {
                 console.error("something went wrong");
                 console.error(e);
             }
+        }
+
+        try {
+            const zipBlob = await zip.generateAsync({ type: "blob" });
+            const zipUrl = URL.createObjectURL(zipBlob);
+
+            const link = document.createElement("a");
+            link.href = zipUrl;
+            link.download = "converted_files.zip";
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        } catch (e) {
+            console.log(e);
         }
     };
 
@@ -197,9 +210,6 @@ export function ConverterTool() {
                                 </div>
                             ))}
                 </div>
-            </div>
-            <div className="flex h-80 flex-col gap-1 overflow-hidden rounded-md bg-slate-800 p-2 text-white">
-                <p ref={messageRef}>Logs</p>
             </div>
         </div>
     );
