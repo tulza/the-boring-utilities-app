@@ -1,9 +1,8 @@
 import React from "react";
-import { ImageSkeleton } from "@components/image/ImageSkeleton";
-import { SuspenseImage } from "@components/image/SuspenseImage";
-import { CardSchema, type Card } from "@typings/card";
-
-const { default: cardData } = await import("@data/cards/CardData.json");
+import cardData from "@shared/cards/CardData.json";
+import { ImageSkeleton } from "@shared/components/image/ImageSkeleton";
+import { SuspenseImage } from "@shared/components/image/SuspenseImage";
+import { CardSchema, type Card } from "src/app/(routes)/image-converter/_types/card";
 
 const GenerateCard = async () => {
     if (CardSchema.array().safeParse(cardData).success === false) return <ErrorCard />;
@@ -15,7 +14,7 @@ const Card = ({ title, description, image, path }: Card) => {
     return (
         <a
             href={path}
-            className="hover:shadow-card-soft flex h-min w-full select-none gap-12 rounded-md border bg-white px-12 py-8 shadow-card transition-[box-shadow,transform] hover:scale-105"
+            className="flex h-min w-full select-none gap-12 rounded-md border bg-white px-12 py-8 shadow-card transition-[box-shadow,transform] hover:scale-105 hover:shadow-card-soft"
         >
             <div className="relative w-28">
                 <SuspenseImage fill fallback={<ImageSkeleton />} src={image.src} alt={image.alt} />

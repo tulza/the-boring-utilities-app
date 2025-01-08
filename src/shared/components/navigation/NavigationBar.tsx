@@ -1,5 +1,5 @@
 import React from "react";
-import Block from "@components/Block";
+import Block from "@shared/components/other/Block";
 
 const NavigationBar = ({ root, title }: { root?: boolean; title: string }) => {
     return (

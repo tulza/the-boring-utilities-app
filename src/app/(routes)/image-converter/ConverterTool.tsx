@@ -1,15 +1,16 @@
 "use client";
 
 import React, { useRef, useState } from "react";
-import { ImageSkeleton } from "@components/image/ImageSkeleton";
-import { SuspenseImage } from "@components/image/SuspenseImage";
-import extensions from "@data/image-converter/imageExtensions.json";
 import { FFmpeg } from "@ffmpeg/ffmpeg";
 import { fetchFile } from "@ffmpeg/util";
-import { loadFFMPEG } from "@libs/ffmpeg";
 import { cn } from "@libs/utils";
+import { ImageSkeleton } from "@shared/components/image/ImageSkeleton";
+import { SuspenseImage } from "@shared/components/image/SuspenseImage";
 import { motion } from "framer-motion";
 import JSZip from "jszip";
+import { loadFFMPEG } from "src/app/(routes)/image-converter/_libs/ffmpeg";
+
+import extensions from "./_data/image-converter/imageExtensions.json";
 
 export function ConverterTool() {
     const [fileList, setFileList] = useState<File[]>();
