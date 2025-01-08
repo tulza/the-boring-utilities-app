@@ -12,27 +12,32 @@
         "isolatedModules": true,
         "jsx": "preserve",
         "incremental": true,
+        "baseUrl": ".",
+        "rootDir": ".",
+        "paths": {
+            // payload
+            "@payload-config": ["./src/payload.config.ts"],
+            "@collections/*": ["./src/payload/collections/*"],
+            // routes
+            "@image-converter/*": ["./src/app/(routes)/image-converter/*"],
+            "@root/*": ["./src/app/(routes)/*"],
+            "@app/*": ["./src/app/*"],
+            // common
+            "@fonts": ["./src/fonts/*"],
+            "@hooks/*": ["./src/hooks/*"],
+            "@libs/*": ["./src/libs/*"],
+            "@services/*": ["./src/services/*"],
+            "@shared/*": ["./src/shared/*"],
+            "@styles/*": ["./src/styles/*"],
+            "@components/*": ["./src/components/*"],
+            "@typings/*": ["./src/types/*"]
+        },
+        "target": "ES2022",
         "plugins": [
             {
                 "name": "next"
             }
-        ],
-        "baseUrl": ".",
-        "rootDir": ".",
-        "paths": {
-            // folder
-            "@collections/*": ["src/payload/collections/*"],
-            "@shared/*": ["./src/shared/*"],
-            "@components/*": ["./src/components/*"],
-            "@data/*": ["./src/data/*"],
-            "@hooks/*": ["./src/hooks/*"],
-            "@libs/*": ["./src/libs/*"],
-            "@typings/*": ["./src/types/*"], // local types
-            // files
-            "@fonts": ["./src/fonts"],
-            "@payload-config": ["./src/payload.config.ts"]
-        },
-        "target": "ES2022"
+        ]
     },
     "include": ["next-env.d.ts", "**/*.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
     "exclude": ["node_modules"]

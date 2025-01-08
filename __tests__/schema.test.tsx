@@ -1,7 +1,6 @@
-import cardData from "@data/cards/CardData.json";
-import { describe, expect, test } from "@jest/globals";
+import { cardData, CardSchema } from "@shared/data/CardData";
 
-import { CardSchema } from "src/app/(routes)/image-converter/_types/card";
+import { describe, expect, test } from "@jest/globals";
 
 describe("Test Schema", () => {
     test("if card data matches the schema", () => {

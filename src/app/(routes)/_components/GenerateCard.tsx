@@ -1,18 +1,16 @@
 import React from "react";
 
-import cardData from "@shared/cards/CardData.json";
 import { ImageSkeleton } from "@shared/components/image/ImageSkeleton";
 import { SuspenseImage } from "@shared/components/image/SuspenseImage";
-
-import { CardSchema, type Card } from "src/app/(routes)/image-converter/_types/card";
+import { cardData, CardSchema, type Card } from "@shared/data/CardData";
 
 const GenerateCard = async () => {
     if (CardSchema.array().safeParse(cardData).success === false) return <ErrorCard />;
 
-    return cardData.map((card) => <Card {...card} key={card.title} />);
+    return cardData.map((card) => <UtilityCard {...card} key={card.title} />);
 };
 
-const Card = ({ title, description, image, path }: Card) => {
+const UtilityCard = ({ title, description, image, path }: Card) => {
     return (
         <a
             href={path}
