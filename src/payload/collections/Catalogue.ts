@@ -1,5 +1,6 @@
-import { SLUG } from "@libs/consts/slug";
 import type { CollectionConfig } from "payload";
+
+import { SLUG } from "@libs/consts/slug";
 
 export const Catalogue: CollectionConfig = {
     slug: SLUG.CATALOGUE,

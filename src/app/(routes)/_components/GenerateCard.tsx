@@ -1,7 +1,9 @@
 import React from "react";
+
 import cardData from "@shared/cards/CardData.json";
 import { ImageSkeleton } from "@shared/components/image/ImageSkeleton";
 import { SuspenseImage } from "@shared/components/image/SuspenseImage";
+
 import { CardSchema, type Card } from "src/app/(routes)/image-converter/_types/card";
 
 const GenerateCard = async () => {

@@ -5,8 +5,10 @@ import config from "@payload-config";
 import "@payloadcms/next/css";
 
 import React from "react";
-import { handleServerFunctions, RootLayout } from "@payloadcms/next/layouts";
+
 import type { ServerFunctionClient } from "payload";
+
+import { handleServerFunctions, RootLayout } from "@payloadcms/next/layouts";
 
 import { importMap } from "./admin/importMap.js";
 

@@ -1,11 +1,13 @@
 // storage-adapter-import-placeholder
 import path from "path";
 import { fileURLToPath } from "url";
+
+import { buildConfig } from "payload";
+
 import { postgresAdapter } from "@payloadcms/db-postgres";
 import { lexicalEditor } from "@payloadcms/richtext-lexical";
-import { buildConfig } from "payload";
-import sharp from "sharp";
 
+import sharp from "sharp";
 import { Catalogue } from "./payload/collections/Catalogue";
 import { Users } from "./payload/collections/Users";
 

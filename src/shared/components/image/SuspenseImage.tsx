@@ -2,6 +2,7 @@
 
 import React, { useEffect } from "react";
 import { default as NextImage, type ImageProps } from "next/image";
+
 import { AnimatePresence, motion } from "framer-motion";
 
 interface SuspenseImageProps extends ImageProps {

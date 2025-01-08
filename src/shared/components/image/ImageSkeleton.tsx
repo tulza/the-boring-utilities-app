@@ -1,7 +1,8 @@
 "use client";
 
-import { easeOutQuad } from "@libs/ease";
 import { motion } from "framer-motion";
+
+import { easeOutQuad } from "@libs/ease";
 
 export const ImageSkeleton = ({ width, height }: { width?: number; height?: number }) => {
     return (
