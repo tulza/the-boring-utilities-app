@@ -4,10 +4,9 @@ import React from "react";
 
 import { motion, Variants } from "motion/react";
 
+import { textVariantDefault } from "@image-converter/_data/variants/text";
 import { cn } from "@libs/utils";
 import { type HTMLAttributeNoMotion } from "@typings/motion";
-
-import { textVariantDefault } from "src/app/(routes)/image-converter/_data/variants/text";
 
 interface TextProps extends HTMLAttributeNoMotion<"p"> {
     text: string;

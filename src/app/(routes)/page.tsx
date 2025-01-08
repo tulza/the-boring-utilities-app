@@ -1,7 +1,7 @@
 import NavigationBar from "@shared/components/navigation/NavigationBar";
 import Block from "@shared/components/other/Block";
 
-import GenerateCard from "src/app/(routes)/_components/GenerateCard";
+import GenerateCard from "@root/_components/GenerateCard";
 
 export default function Home() {
     return (

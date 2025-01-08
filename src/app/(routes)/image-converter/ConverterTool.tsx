@@ -2,8 +2,8 @@
 
 import React, { useRef, useState } from "react";
 
-import { motion } from "framer-motion";
 import JSZip from "jszip";
+import { motion } from "motion/react";
 
 import { ImageSkeleton } from "@shared/components/image/ImageSkeleton";
 import { SuspenseImage } from "@shared/components/image/SuspenseImage";
