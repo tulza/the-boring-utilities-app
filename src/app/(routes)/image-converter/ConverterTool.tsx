@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useRef, useState } from "react";
-import { createKey } from "next/dist/shared/lib/router/router";
 import { ImageSkeleton } from "@components/image/ImageSkeleton";
 import { SuspenseImage } from "@components/image/SuspenseImage";
 import extensions from "@data/image-converter/imageExtensions.json";
@@ -44,6 +43,7 @@ export function ConverterTool() {
         for (let i = 0; i < fileList.length; i++) {
             try {
                 const file = fileList[i];
+                console.log(file);
                 const nameArray = file.name.split(".");
                 const currentExt = nameArray[nameArray.length - 1];
 
@@ -65,7 +65,6 @@ export function ConverterTool() {
                 ffmpeg.writeFile(file.name, await fetchFile(URL.createObjectURL(file)));
                 await ffmpeg.exec(["-i", file.name, "-y", newName]);
                 const data = await ffmpeg.readFile(newName);
-
                 zip.file(newName, data);
             } catch (e) {
                 console.error("something went wrong");
