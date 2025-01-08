@@ -1,19 +1,23 @@
 "use client";
 
 import React, { useRef, useState } from "react";
-import { ImageSkeleton } from "@components/image/ImageSkeleton";
-import { SuspenseImage } from "@components/image/SuspenseImage";
-import extensions from "@data/image-converter/imageExtensions.json";
+
+import JSZip from "jszip";
+import { motion } from "motion/react";
+
+import { ImageSkeleton } from "@shared/components/image/ImageSkeleton";
+import { SuspenseImage } from "@shared/components/image/SuspenseImage";
+
 import { FFmpeg } from "@ffmpeg/ffmpeg";
 import { fetchFile } from "@ffmpeg/util";
-import { loadFFMPEG } from "@libs/ffmpeg";
+import { loadFFMPEG } from "@image-converter/_libs/ffmpeg";
 import { cn } from "@libs/utils";
-import { motion } from "framer-motion";
-import JSZip from "jszip";
+
+import { extensionsData } from "./_data/imageExtensions";
 
 export function ConverterTool() {
     const [fileList, setFileList] = useState<File[]>();
-    const [extension, setExtension] = useState(extensions[0].extension);
+    const [extension, setExtension] = useState(extensionsData[0].extension);
     const fileLength = fileList ? fileList.length : 0;
 
     // FFmpeg initialization
@@ -113,7 +117,7 @@ export function ConverterTool() {
         <div className="mb-32 flex flex-col gap-4">
             <p className="text-2xl">Batch convert all to </p>
             <div className="flex w-full flex-wrap justify-center gap-2 rounded-md border bg-slate-100 p-2">
-                {extensions.map((ext) => (
+                {extensionsData.map((ext) => (
                     <button
                         key={ext.extension}
                         onClick={() => handleExtensionChange(ext.extension)}

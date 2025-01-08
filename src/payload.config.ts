@@ -1,13 +1,15 @@
 // storage-adapter-import-placeholder
 import path from "path";
 import { fileURLToPath } from "url";
+
+import { buildConfig } from "payload";
+
 import { postgresAdapter } from "@payloadcms/db-postgres";
 import { lexicalEditor } from "@payloadcms/richtext-lexical";
-import { buildConfig } from "payload";
-import sharp from "sharp";
 
-import { Catalogue } from "./collections/Catalogue";
-import { Users } from "./collections/Users";
+import sharp from "sharp";
+import { Catalogue } from "./payload/collections/Catalogue";
+import { Users } from "./payload/collections/Users";
 
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);

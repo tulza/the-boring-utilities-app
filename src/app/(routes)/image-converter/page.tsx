@@ -1,6 +1,6 @@
-import Block from "@components/Block";
-import NavigationBar from "@components/navigation/NavigationBar";
-import NoSSRWrapper from "@components/NoSSRWrapper";
+import NavigationBar from "@shared/components/navigation/NavigationBar";
+import Block from "@shared/components/other/Block";
+import NoSSRWrapper from "@shared/components/other/NoSSRWrapper";
 
 import { ConverterTool } from "./ConverterTool";
 

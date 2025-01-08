@@ -1,6 +1,6 @@
-import cardData from "@data/cards/CardData.json";
+import { cardData, CardSchema } from "@shared/data/CardData";
+
 import { describe, expect, test } from "@jest/globals";
-import { CardSchema } from "@typings/card";
 
 describe("Test Schema", () => {
     test("if card data matches the schema", () => {

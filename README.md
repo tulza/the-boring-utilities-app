@@ -26,4 +26,3 @@ pnpm install
 # run development server
 pnpm dev
 ```
-

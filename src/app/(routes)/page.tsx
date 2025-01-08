@@ -1,6 +1,7 @@
-import Block from "@components/Block";
-import GenerateCard from "@components/home/GenerateCard";
-import NavigationBar from "@components/navigation/NavigationBar";
+import NavigationBar from "@shared/components/navigation/NavigationBar";
+import Block from "@shared/components/other/Block";
+
+import GenerateCard from "@root/_components/GenerateCard";
 
 export default function Home() {
     return (
