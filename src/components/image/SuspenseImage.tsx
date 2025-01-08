@@ -25,7 +25,7 @@ export const SuspenseImage = ({ src, alt, fallback, ...props }: SuspenseImagePro
                 fallback
             ) : (
                 <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} key="image">
-                    <NextImage src={src} alt={alt} {...props} onLoadingComplete={() => setLoading(false)} />
+                    <NextImage src={src} alt={alt} {...props} onLoad={() => setLoading(false)} />
                 </motion.div>
             )}
         </AnimatePresence>

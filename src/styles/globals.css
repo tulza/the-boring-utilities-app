@@ -14,3 +14,7 @@
 .noise-10 {
     background-image: url("./assets/noise-10.png");
 }
+
+input[type="file"] {
+    display: none;
+}

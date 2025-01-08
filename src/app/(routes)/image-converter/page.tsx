@@ -1,6 +1,8 @@
 import Block from "@components/Block";
-import GenerateCard from "@components/home/GenerateCard";
 import NavigationBar from "@components/navigation/NavigationBar";
+import NoSSRWrapper from "@components/NoSSRWrapper";
+
+import { ConverterTool } from "./ConverterTool";
 
 export default function Home() {
     return (
@@ -11,7 +13,9 @@ export default function Home() {
             <div className="mt-16 flex w-full justify-center">
                 <Block>
                     <div className="flex w-full flex-col gap-8">
-                        <GenerateCard />
+                        <NoSSRWrapper>
+                            <ConverterTool />
+                        </NoSSRWrapper>
                     </div>
                 </Block>
             </div>

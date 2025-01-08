@@ -1,4 +1,11 @@
+import { Metadata } from "next";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+    title: "Not Found",
+    description:
+        "the Boring Utilities App helps Simplify life's boring tasks with a collection of tools to assist you!",
+};
 
 export default function NotFound() {
     return (
