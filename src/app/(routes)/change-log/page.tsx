@@ -3,7 +3,7 @@ import Block from "@shared/components/other/Block";
 
 import GenerateCard from "@root/_components/GenerateCard";
 
-export default function CateloguePage() {
+export default function ChangeLogPage() {
     return (
         <DefaultLayout>
             <Block>

@@ -15,7 +15,7 @@ const NavigationBar = ({ title }: { title: string }) => {
             <h1 className="select-none font-clashDisplay text-2xl tracking-[10%]">{title}</h1>
             <nav className="flex gap-12 font-generalSans text-lg">
                 {isRoot ? <Link href="/about">About</Link> : <Link href="/">Home</Link>}
-                <Link href="/catalogue">Catalogue</Link>
+                <Link href="/change-log">Change log</Link>
                 <Link href="/wiki">Wiki</Link>
             </nav>
         </Block>
