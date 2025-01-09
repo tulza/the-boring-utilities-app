@@ -4,7 +4,7 @@ import NoSSRWrapper from "@shared/components/other/NoSSRWrapper";
 
 import { ConverterTool } from "./ConverterTool";
 
-export default function Home() {
+export default function ImageConverterPage() {
     return (
         <DefaultLayout title="Image Converter">
             <Block>

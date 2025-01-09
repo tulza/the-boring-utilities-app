@@ -10,7 +10,7 @@ const GenerateCard = async () => {
     return cardData.map((card) => <UtilityCard {...card} key={card.title} />);
 };
 
-const UtilityCard = ({ title, description, image, path }: Card) => {
+const UtilityCard = ({ title, description, image, path, version }: Card) => {
     return (
         <a
             href={path}
@@ -21,7 +21,8 @@ const UtilityCard = ({ title, description, image, path }: Card) => {
             </div>
             <div className="flex flex-col gap-4">
                 <h3 className="whitespace-nowrap font-clashDisplay text-2xl">
-                    {title} <span className="ml-2 border bg-zinc-300 px-1 font-mono text-sm">W.I.P</span>
+                    {title}
+                    <span className="ml-2 border bg-zinc-300 px-1 font-mono text-sm">{version || "W.I.P"}</span>
                 </h3>
                 <p className="font-generalSans font-light">{description}</p>
             </div>
