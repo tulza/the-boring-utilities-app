@@ -8,7 +8,7 @@ const CardSchema = z.object({
         alt: z.string(),
     }),
     path: z.string(),
-    WIP: z.boolean().optional(),
+    version: z.string().optional(),
 });
 
 type Card = z.infer<typeof CardSchema>;
@@ -19,21 +19,26 @@ const cardData: Card[] = [
         description: "Convert an image file(s) into another type",
         image: { src: "/svg/converter.svg", alt: "Image Converter" },
         path: "/image-converter",
-        WIP: true,
+        version: "1.0.0",
     },
     {
-        title: "Video to gif",
+        title: "README Builder",
         description: "Turn your video into a gif",
         image: { src: "/svg/noimage.svg", alt: "no image" },
         path: "/video-to-gif",
-        WIP: true,
     },
+    // {
+    //     title: "Video to gif",
+    //     description: "Turn your video into a gif",
+    //     image: { src: "/svg/noimage.svg", alt: "no image" },
+    //     path: "/video-to-gif",
+    //     WIP: true,
+    // },
     {
         title: "Color to Tailwind",
         description: "convert any color format to tailwind usable",
         image: { src: "/svg/noimage.svg", alt: "no image" },
         path: "/color-to-tailwind",
-        WIP: true,
     },
 ];
 
