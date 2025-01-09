@@ -1,15 +1,22 @@
+"use client";
+
 import React from "react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 import Block from "@shared/components/other/Block";
 
-const NavigationBar = ({ root, title }: { root?: boolean; title: string }) => {
+const NavigationBar = ({ title }: { title: string }) => {
+    const path = usePathname();
+    const isRoot = path === "/";
+
     return (
         <Block>
-            <h1 className="font-clashDisplay text-2xl tracking-[10%]">{title}</h1>
+            <h1 className="select-none font-clashDisplay text-2xl tracking-[10%]">{title}</h1>
             <nav className="flex gap-12 font-generalSans text-lg">
-                {root ? <p>About</p> : <p>Home</p>}
-                <p>Catalogue</p>
-                <p>Wiki</p>
+                {isRoot ? <Link href="/About">About</Link> : <Link href="/">Home</Link>}
+                <Link href="/Catalogue">Catalogue</Link>
+                <Link href="/Wiki">Wiki</Link>
             </nav>
         </Block>
     );
