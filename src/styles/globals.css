@@ -18,3 +18,32 @@
 input[type="file"] {
     display: none;
 }
+
+.tiny-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: #888 #0000;
+}
+
+/* width */
+.tiny-scrollbar::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: none;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #0000;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
