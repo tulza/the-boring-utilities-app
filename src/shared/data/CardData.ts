@@ -25,7 +25,7 @@ const cardData: Card[] = [
         title: "README Builder",
         description: "Turn your video into a gif",
         image: { src: "/svg/noimage.svg", alt: "no image" },
-        path: "/video-to-gif",
+        path: "/readme-builder",
     },
     // {
     //     title: "Video to gif",
